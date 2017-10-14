@@ -49,10 +49,17 @@ def pickquote(country, startdate, enddate)
    return quote
 end
 
-choice = randomcountry(response)
-puts choice[1]
-finalquote = pickquote(choice[0], "2017-11-01", "2017-11-04")
+done = false
 
+while done == false do
+
+  choice = randomcountry(response)
+  puts choice[1]
+  finalquote = pickquote(choice[0], "2017-11-01", "2017-11-04")
+  if not finalquote.nil?
+    done = true
+  end
+end
 puts "Your destination is " + choice[1] + "\n"
 puts "Your flight will cost £" + finalquote['MinPrice'].to_s + '0' + "\n"
 
