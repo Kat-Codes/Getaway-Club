@@ -1,0 +1,36 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
+    multi_json (1.12.2)
+    multi_xml (0.6.0)
+    multipart-post (2.0.0)
+    mustermann (1.0.1)
+    rack (2.0.3)
+    rack-protection (2.0.0)
+      rack
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
+    skyscanner (0.2.0)
+      faraday
+      multi_json
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  httparty
+  rack
+  sinatra
+  skyscanner
+
+BUNDLED WITH
+   1.15.4
