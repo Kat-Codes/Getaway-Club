@@ -12,13 +12,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
     
-<body>
+<body style="overflow-x: hidden">
     <p style="text-align: center;font-size:20px">Your destination is:<br /><strong style="font-size:50px"><%= @final[0] %>!</strong></p>
     <div class="row" style="text-align: center;margin-top: 15px">
         <div class="col-sm-1">
         </div>
             <div class="col-sm-2">
-                    <p >Your flight will cost<br /> <strong style="font-size:30px">£<%= @final[1] %></strong></p>
+                    <p >Your flight will cost<br /> <strong style="font-size:30px">£<%= @final[1] %></strong><br />cost per person: <br /0><strong style="font-size:20px">£<%= @fuck %>0</strong></p>
         </div>
         <div class="col-sm-2">
                 <p >You will be leaving on: <br /><strong style="font-size:30px"><%= @final[2]  %></strong></p>
@@ -32,12 +32,9 @@
         <div class="col-sm-2">
             <p >you will be flying to: <br /><strong style="font-size:30px"><%= @final[5] %></strong></p>
         </div>
-        <div class="col-sm-1">
-            <%= @fuck %>
-        </div>
     </div>
 
-
+    <a href="https://www.skyscanner.net/"><img src="button2.png" style="width:25%; height:auto;margin-left:37.5%" title="SkyScanner" alt="SkyScannerLink"></a>
 
    
     
