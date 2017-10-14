@@ -18,10 +18,10 @@ post '/getholiday' do
   @minval = params[:MinValue]
   @maxval = params[:MaxValue]
   @people = params[:PersonCount]
-  @continentPreferenct=params[:ContinentChoice]
+  @continentPreference=params[:ContinentChoice]
   puts(@datein + @dateout)
     
-  @final = result(@datein, @dateout)
+  @final = result(@continentPreference, @datein, @dateout)
   puts @final
   erb :holiday
 end

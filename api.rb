@@ -2,18 +2,20 @@ require_relative 'skytest'
 
 require 'httparty'
 
-def randomcountry data
+def randomcountry(continent, data)
    countrylist = []
    names = []
 
    continents = data['Continents']
    continents.each do |j|
-      countries = j['Countries']
-     countries.each do |i|
-        countrylist.push(i['Id'])
-        names.push(i['Name'])
+     if j['Name'].downcase == continent.downcase or continent.downcase == "any"
+       countries = j['Countries']
+       countries.each do |i|
+          countrylist.push(i['Id'])
+          names.push(i['Name'])
+       end
      end
-   end
+     end
 
    number = countrylist.length
    selection = rand(number)
@@ -71,7 +73,7 @@ def pickquote(country, startdate, enddate)
 
    return [quote, finalorigin, finaldestination]
 end
-def result(datein, dateout)
+def result(continent, datein, dateout)
 
   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
   response = HTTParty.get(url, format: :json)
@@ -80,7 +82,7 @@ def result(datein, dateout)
 
   while done == false do
 
-    choice = randomcountry(response)
+    choice = randomcountry(continent, response)
     puts choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
     if (not finalquote.nil?) && (not finalquote[0].nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
