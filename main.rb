@@ -13,6 +13,8 @@ post '/getholiday' do
   dateout = swapdate(params[:enddate])
   puts(datein + dateout)
   findquote(datein, dateout)
+    
+    erb :holiday
 end
 
 def swapdate(dateIn)
