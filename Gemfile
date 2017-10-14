@@ -8,7 +8,6 @@ gem "bundler"
 gem "rack"
 gem "sinatra"
 gem 'sinatra-contrib'
-gem 'thin'
 gem 'capybara'
 gem 'rake'
 gem 'skyscanner'
