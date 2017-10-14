@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'erb'
+require_relative 'skytest'
 
 get '/' do
     
@@ -8,8 +9,10 @@ end
 
 
 post '/getholiday' do 
-  datein = swapdate(params[:datepicker])
-  dateout = swapdate(params[:datepicker2])
+  datein = swapdate(params[:startdate])
+  dateout = swapdate(params[:enddate])
+  puts(datein + dateout)
+  findquote(datein, dateout)
 end
 
 def swapdate(dateIn)
