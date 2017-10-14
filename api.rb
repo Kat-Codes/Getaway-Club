@@ -50,6 +50,8 @@ def pickquote(country, startdate, enddate)
    quotes = quotesdata['Quotes']
    places = quotesdata['Places']
    quote = 0
+   origincode = 0
+   destinationcode = 0
 
    if not quotes.nil?
      quote = quotes.first
@@ -67,14 +69,16 @@ def pickquote(country, startdate, enddate)
      if i['PlaceId'] == originid
         puts i['Name'] + i['PlaceId'].to_s
         finalorigin = i['Name']
+        origincode = i['SkyscannerCode']
      end
      if i['PlaceId'] == destinationid
         puts i['Name'] + i['PlaceId'].to_s
         finaldestination = i['Name']
+        destinationcode = i['SkyscannerCode']
      end
    end
 
-   return [quote, finalorigin, finaldestination]
+   return [quote, finalorigin, finaldestination, origincode, destinationcode]
 end
 def result(continent, datein, dateout)
 
@@ -99,6 +103,7 @@ def result(continent, datein, dateout)
     finalquote[0]['MinPrice'] *=  @people.to_i
     
   answer = [choice[1], finalquote[0]['MinPrice'].to_s + '0', datein, dateout, originname ,  destinationname]
+  @codes = [finalquote[3], finalquote[4]]
   puts answer
   return answer
 
