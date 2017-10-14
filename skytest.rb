@@ -13,7 +13,7 @@ def findquote(country, startdate, enddate)
 end
 
 def findhotel(country)
-  @client = GooglePlaces::Client.new("AIzaSyBGC_-1md8E6szJgOL2rJ7dpCB3Ocsc1lE")
-  puts(@client.spots_by_query('Hotel near' + country))
+  #@client = GooglePlaces::Client.new("AIzaSyBGC_-1md8E6szJgOL2rJ7dpCB3Ocsc1lE")
+  #puts(@client.spots_by_query('Hotel near' + country))
 end
 

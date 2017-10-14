@@ -2,11 +2,6 @@ require_relative 'skytest'
 
 require 'httparty'
 
-url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
-
-response = HTTParty.get(url, format: :json)
-response.parsed_response
-
 def randomcountry data
    countrylist = []
    names = []
@@ -49,19 +44,29 @@ def pickquote(country, startdate, enddate)
    return quote
 end
 
-done = false
+def result
 
-while done == false do
+  url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
+  response = HTTParty.get(url, format: :json)
+  response = response.parsed_response
 
-  choice = randomcountry(response)
-  puts choice[1]
-  finalquote = pickquote(choice[0], "2017-11-01", "2017-11-04")
-  if not finalquote.nil?
-    done = true
+  done = false
+
+  while done == false do
+
+    choice = randomcountry(response)
+    puts choice[1]
+    finalquote = pickquote(choice[0], "2017-11-01", "2017-11-04")
+    if not finalquote.nil?
+      done = true
+    end
   end
+
+  answer = "Your destination is " + choice[1] + "\n" + "Your flight will cost £" + finalquote['MinPrice'].to_s + '0' + "\n"
+  puts answer
+  return answer
+
 end
-puts "Your destination is " + choice[1] + "\n"
-puts "Your flight will cost £" + finalquote['MinPrice'].to_s + '0' + "\n"
 
 
 

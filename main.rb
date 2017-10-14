@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'erb'
 require_relative 'skytest'
+require_relative 'api'
 
 get '/' do
     
@@ -16,7 +17,9 @@ post '/getholiday' do
   dateout = swapdate(params[:enddate])
   puts(datein + dateout)
     
-    erb :holiday
+  @final = result
+  puts @final
+  erb :holiday
 end
 
 def swapdate(dateIn)
