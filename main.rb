@@ -13,11 +13,11 @@ get 'getholiday' do
 end
 
 post '/getholiday' do 
-  datein = swapdate(params[:startdate])
-  dateout = swapdate(params[:enddate])
-  puts(datein + dateout)
+  @datein = swapdate(params[:startdate])
+  @dateout = swapdate(params[:enddate])
+  puts(@datein + @dateout)
     
-  @final = result
+  @final = result(@datein, @dateout)
   puts @final
   erb :holiday
 end

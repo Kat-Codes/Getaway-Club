@@ -44,7 +44,7 @@ def pickquote(country, startdate, enddate)
    return quote
 end
 
-def result
+def result(datein, dateout)
 
   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
   response = HTTParty.get(url, format: :json)
@@ -56,7 +56,7 @@ def result
 
     choice = randomcountry(response)
     puts choice[1]
-    finalquote = pickquote(choice[0], "2017-11-01", "2017-11-04")
+    finalquote = pickquote(choice[0], datein, dateout)
     if not finalquote.nil?
       done = true
     end
