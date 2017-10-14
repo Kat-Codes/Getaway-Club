@@ -1,10 +1,46 @@
 <%=  erb :defaultheader %>
 
+<!DOCTYPE html>
+    <html lang="en">
+    
+<head>
+  <title>Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    
 <body>
-    <p suck><%= @final[0] %></p>
-    <p suck><%= @final[1] %></p>
-    <p suck><%= "You will be leaving on " + @final[2] + "." %></p>
-    <p suck><%= "You will be returning on " + @final[3] + "." %></p>
-    <p suck><%= @final[4] %></p>
-    <p suck><%= @final[5] %></p>
+    <p style="text-align: center;font-size:20px">Your destination is:<br /><strong style="font-size:50px"><%= @final[0] %>!</strong></p>
+    <div class="row" style="text-align: center;margin-top: 15px">
+        <div class="col-sm-1">
+        </div>
+            <div class="col-sm-2">
+                    <p >Your flight will cost<br /> <strong style="font-size:30px">£<%= @final[1] %></strong></p>
+        </div>
+        <div class="col-sm-2">
+                <p >You will be leaving on: <br /><strong style="font-size:30px"><%= @final[2]  %></strong></p>
+        </div>
+        <div class="col-sm-2">
+                <p >You will be returning on <br /><strong style="font-size:30px"><%=  @final[3] %></strong></p>
+        </div>
+        <div class="col-sm-2">
+             <p >You will be flying from:<br /><strong style="font-size:30px"><%= @final[4] %></strong></p>
+        </div>
+        <div class="col-sm-2">
+            <p >you will be flying to: <br /><strong style="font-size:30px"><%= @final[5] %></strong></p>
+        </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
+
+
+
+   
+    
 </body>
+        
+        <footer style="background-color:#b35900;" class="page-footer" ><div style="padding-top:10px; padding-bottom:10px;color:white">Made by H. Sams, K.Walker, A Chapman, D. Marshall</div></footer>
+</html>
