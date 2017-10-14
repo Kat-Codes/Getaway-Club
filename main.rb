@@ -8,7 +8,7 @@ get '/' do
 end
 
 get 'getholiday' do 
-    erb: holiday
+    erb :holiday
 end
 
 post '/getholiday' do 
