@@ -17,7 +17,7 @@ def randomcountry data
    end
 
    number = countrylist.length
-   puts countrylist[rand(number)]
+   return countrylist[rand(number)]
 
 
    #countries = data['Continents'].first['Countries']
@@ -26,6 +26,8 @@ def randomcountry data
    #end
 end
 
-randomcountry response
+def gethotel country checkindate checkoutdate minprice maxprice
+   
+   hotelurl = "https://gateway.skyscanner.net/hotels/v1/prices/search/entity/#{country}?market=GB&locale=en_GB&checkin_date=#{checkindate}&checkout_date=#{checkoutdate}&currency=GBP&adults=1&rooms=1&price_min=#{minprice}&price_max=#{maxprice}"
 
       
