@@ -7,6 +7,9 @@ get '/' do
   erb :index
 end
 
+get 'getholiday' do 
+    erb: holiday
+end
 
 post '/getholiday' do 
   datein = swapdate(params[:startdate])
