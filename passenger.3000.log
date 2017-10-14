@@ -1,0 +1,35 @@
+[ N 2017-10-14 19:27:28.6213 33308/T1 age/Wat/WatchdogMain.cpp:1283 ]: Starting Passenger watchdog...
+[ N 2017-10-14 19:27:28.6446 33312/T1 age/Cor/CoreMain.cpp:1083 ]: Starting Passenger core...
+[ N 2017-10-14 19:27:28.6457 33312/T1 age/Cor/CoreMain.cpp:248 ]: Passenger core running in multi-application mode.
+[ N 2017-10-14 19:27:28.6617 33312/T1 age/Cor/CoreMain.cpp:830 ]: Passenger core online, PID 33312
+[ N 2017-10-14 19:27:28.6729 33314/T1 age/Ust/UstRouterMain.cpp:537 ]: Starting Passenger UstRouter...
+[ N 2017-10-14 19:27:28.6748 33314/T1 age/Ust/UstRouterMain.cpp:350 ]: Passenger UstRouter online, PID 33314
+App 33326 stdout: 
+[ N 2017-10-14 19:27:31.0266 33312/T5 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 33339 stdout: 
+App 33326 stderr: 127.0.0.1 - - [14/Oct/2017:19:27:32 +0100] "HEAD / HTTP/1.1" 200 3233 0.0252
+App 33326 stderr: 127.0.0.1 - - [14/Oct/2017:19:27:44 +0100] "GET / HTTP/1.1" 200 3233 0.0074
+App 33326 stderr: 127.0.0.1 - - [14/Oct/2017:19:27:44 +0100] "GET /favicon.ico HTTP/1.1" 404 467 0.0012
+
+
+[ N 2017-10-14 19:27:55.0660 33314/T4 age/Ust/UstRouterMain.cpp:430 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2017-10-14 19:27:55.0660 33312/T7 age/Cor/CoreMain.cpp:588 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2017-10-14 19:27:55.0660 33314/T1 age/Ust/UstRouterMain.cpp:500 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2017-10-14 19:27:55.0660 33312/T1 age/Cor/CoreMain.cpp:1002 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2017-10-14 19:27:55.0660 33314/T4 Ser/Server.h:531 ]: [UstRouter] Shutdown finished
+[ N 2017-10-14 19:27:55.0660 33312/T1 age/Cor/CoreMain.cpp:917 ]: Checking whether to disconnect long-running connections for process 33339, application /Users/katiewalker/desktop/hacksheffield-3.0/public (development)
+[ N 2017-10-14 19:27:55.0660 33314/T6 Ser/Server.h:885 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ N 2017-10-14 19:27:55.0661 33314/T6 Ser/Server.h:531 ]: [UstRouterApiServer] Shutdown finished
+[ N 2017-10-14 19:27:55.0662 33312/T7 Ser/Server.h:885 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2017-10-14 19:27:55.0663 33312/T7 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2017-10-14 19:27:55.0663 33312/Tb Ser/Server.h:885 ]: [ServerThr.3] Freed 128 spare client objects
+[ N 2017-10-14 19:27:55.0663 33312/Tb Ser/Server.h:531 ]: [ServerThr.3] Shutdown finished
+[ N 2017-10-14 19:27:55.0664 33312/T9 Ser/Server.h:885 ]: [ServerThr.2] Freed 128 spare client objects
+[ N 2017-10-14 19:27:55.0664 33312/Td Ser/Server.h:885 ]: [ServerThr.4] Freed 128 spare client objects
+[ N 2017-10-14 19:27:55.0664 33312/T9 Ser/Server.h:531 ]: [ServerThr.2] Shutdown finished
+[ N 2017-10-14 19:27:55.0664 33312/Td Ser/Server.h:531 ]: [ServerThr.4] Shutdown finished
+[ N 2017-10-14 19:27:55.0665 33312/Tf Ser/Server.h:885 ]: [ApiServer] Freed 0 spare client objects
+[ N 2017-10-14 19:27:55.0665 33312/Tf Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2017-10-14 19:27:55.0665 33312/T1 age/Cor/CoreMain.cpp:917 ]: Checking whether to disconnect long-running connections for process 33339, application /Users/katiewalker/desktop/hacksheffield-3.0/public (development)
+[ N 2017-10-14 19:27:55.0668 33314/T1 age/Ust/UstRouterMain.cpp:531 ]: Passenger UstRouter shutdown finished
+[ N 2017-10-14 19:27:55.3445 33312/T1 age/Cor/CoreMain.cpp:1068 ]: Passenger core shutdown finished
