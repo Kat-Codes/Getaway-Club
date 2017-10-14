@@ -62,7 +62,7 @@ def result(datein, dateout)
     end
   end
 
-  answer = "Your destination is " + choice[1] + "\n" + "Your flight will cost £" + finalquote['MinPrice'].to_s + '0' + "\n"
+  answer = ["Your destination is " + choice[1] + "!", "Your flight will cost £" + finalquote['MinPrice'].to_s + '0.', datein, dateout]
   puts answer
   return answer
 
