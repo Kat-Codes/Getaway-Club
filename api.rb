@@ -40,10 +40,27 @@ def pickquote(country, startdate, enddate)
    quotesdata = findquote(country, startdate, enddate)
    
    quotes = quotesdata['Quotes']
+   places = quotesdata['Places']
    quote = quotes.first
-   return quote
-end
+   outboundleg = quote['OutboundLeg']
+   originid = outboundleg['OriginId']
+   destinationid = outboundleg['DestinationId']
+   finalorigin = 'Blank'
+   finaldestination = 'Blank'
 
+   places.each do |i|
+     if i['PlaceId'] == originid
+        puts i['Name'] + i['PlaceId'].to_s
+        finalorigin = i['Name']
+     end
+     if i['PlaceId'] == destinationid
+        puts i['Name'] + i['PlaceId'].to_s
+        finaldestination = i['Name']
+     end
+   end
+
+   return [quote, finalorigin, finaldestination]
+end
 def result(datein, dateout)
 
   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
@@ -57,12 +74,15 @@ def result(datein, dateout)
     choice = randomcountry(response)
     puts choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
-    if (not finalquote.nil?) && (finalquote['MinPrice'].to_i > @minval.to_i) && (finalquote['MinPrice'].to_i < @maxval.to_i)
+    if (not finalquote.nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
       done = true
     end
   end
 
-  answer = ["Your destination is " + choice[1] + "!", "Your flight will cost £" + finalquote['MinPrice'].to_s + '0.', datein, dateout]
+  originname = finalquote[1]
+  destinationname = finalquote[2]
+
+  answer = ["Your destination is " + choice[1] + "!", "Your flight will cost £" + finalquote[0]['MinPrice'].to_s + '0.', datein, dateout, "You are flying from " + originname + ".", "You are flying to " + destinationname + "."]
   puts answer
   return answer
 
