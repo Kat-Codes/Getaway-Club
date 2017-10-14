@@ -103,7 +103,14 @@ def result(continent, datein, dateout)
     finalquote[0]['MinPrice'] *=  @people.to_i
     
   answer = [choice[1], finalquote[0]['MinPrice'].to_s + '0', datein, dateout, originname ,  destinationname]
+    
+    @adate=datein.gsub("-", '')
+    @adateo=dateout.gsub("-", '')
+    @adate.slice!(0,2)
+    @adateo.slice!(0,2)
+    
   @codes = [finalquote[3], finalquote[4]]
+    @link =("https://www.skyscanner.net/transport/flights/" + @codes[0] + '/' + @codes[1] + '/' + @adate + '/' + @adateo)
   puts answer
   return answer
 
