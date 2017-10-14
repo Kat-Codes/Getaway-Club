@@ -16,6 +16,8 @@ GEM
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
     geocoder (1.4.4)
+    google_places (0.21.0)
+      httparty
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
     mini_mime (0.1.4)
@@ -63,6 +65,7 @@ DEPENDENCIES
   bundler
   capybara
   geocoder
+  google_places
   httparty
   rack
   rake
