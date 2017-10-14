@@ -120,7 +120,7 @@
         </div>
     </div>
     
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <input id="pac-input" class="controls" type="text" value=<%= @final[5] %>>
     <div id="map"></div>
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
@@ -131,6 +131,10 @@
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+     
+
+
+
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -33.8688, lng: 151.2195},
@@ -139,7 +143,22 @@
         });
 
         // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
+        var input          =  document.getElementById('pac-input'),
+           ac              = new google.maps.places.SearchBox(input),
+           itemsloaded    =  google.maps.event
+                          .addDomListener(document.body,
+                                          'DOMNodeInserted',
+                                          function(e){ 
+                            if(e.target.className==='pac-item'){
+                              //remove the listener
+                              google.maps.event.removeListener(itemsloaded);
+                              //trigger the events
+                              google.maps.event.trigger( input, 'keydown', {keyCode:40})
+                              google.maps.event.trigger( input, 'keydown', {keyCode:13})
+                              google.maps.event.trigger( input, 'focus')
+                              google.maps.event.trigger( input, 'keydown', {keyCode:13})
+                            }
+                          });
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -147,6 +166,7 @@
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
         });
+
 
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
@@ -196,6 +216,7 @@
           });
           map.fitBounds(bounds);
         });
+
       }
 
     </script>
