@@ -2,6 +2,11 @@ require 'sinatra'
 require 'erb'
 
 get '/' do
-    puts "poop"
+    
   erb :index
+end
+
+post '/' do
+    
+    erb :index
 end

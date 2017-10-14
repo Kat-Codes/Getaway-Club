@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
     
 <head>
   <title>Homepage</title>
@@ -11,9 +11,15 @@
 </head>
     
 <body>  
-    <div class="container-fluid" style="width: 80%;background-color: lightgray;text-align: center;">
-        <p>Hello World</p>
+    <div class="container-fluid" style="text-align: center;margin: 0;">
+    <form action='/getholiday' method="POST" name="getholiday" id="getholiday" >
+        <div style="font-size: 125px;background-color: #5cb85c;color: white">Getway Club</div>
+        <input type="date" name="startdate">
+        <input type="date" name="enddate">
+                    <button type="button" class="btn btn-success btn-lg;" form:"getholiday" value:"Submit" style="font-size: 50px;margin-top: 100px">Book Me A Holiday!</button>
+         </form>
     </div>
     
 </body>
+<footer>Made by H. Sams, K.Walker, A Champman, D. Marshall</footer>
 </html>
