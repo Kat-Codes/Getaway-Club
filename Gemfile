@@ -13,3 +13,4 @@ gem 'capybara'
 gem 'rake'
 gem 'skyscanner'
 gem "httparty"
+gem 'geocoder'
