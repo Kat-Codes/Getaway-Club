@@ -8,12 +8,15 @@ def randomcountry(continent, data)
 
    continents = data['Continents']
    continents.each do |j|
-     if j['Name'].downcase == continent.downcase or continent.downcase == "any"
+     if j['Name'].downcase.include?(continent.downcase) or continent.downcase == "any"
        countries = j['Countries']
        countries.each do |i|
           countrylist.push(i['Id'])
           names.push(i['Name'])
        end
+     else
+       puts j['Name']
+       puts continent
      end
      end
 
