@@ -33,22 +33,22 @@
 
         <div class="row" style="text-align: center;margin-top: 15px">
             <div class="col-sm-3">
-                <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #b35900">Min Cost
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-      <li><a href="#">£0</a></li>
-    <li><a href="#">£50</a></li>
-    <li><a href="#">£100</a></li>
-    <li><a href="#">£250</a></li>
-      <li><a href="#">£500</a></li>
-      <li><a href="#">£750</a></li>
-      <li><a href="#">£1000</a></li>
-      <li><a href="#">£1500</a></li>
-      <li><a href="#">£2000</a></li>
-      <li><a href="#">Any</a></li>
-  </ul>
-</div>
+                Min Value:
+                <form action="/action_page.php">
+  <select name="Min Value">
+    <option value="0">£0</option>
+    <option value="50">£50</option>
+    <option value="100">£100</option>
+    <option value="250">£250</option>
+      <option value="750">£750</option>
+      <option value="1000">£1000</option>
+      <option value="1500">£1500</option>
+      <option value="2000">£2000</option>
+      
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
             </div>
         <div class="col-sm-3">
            <p>Outbound Date: <input type="text" id="datepicker" name="startdate"></p> 
@@ -57,22 +57,22 @@
             <p>Return Date: <input type="text" id="datepicker2" name="enddate"></p>
         </div>
                 <div class="col-sm-3">
-                    <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #b35900">Max Cost
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
+                    Max value:
+                    <form action="/action_page.php">
+                    <select name="Max Value">
+    <option value="50">£50</option>
+    <option value="100">£100</option>
+    <option value="250">£250</option>
+      <option value="750">£750</option>
+      <option value="1000">£1000</option>
+      <option value="1500">£1500</option>
+      <option value="2000">£2000</option>
+                            <option value="any">Any</option>
       
-    <li><a href="#">£50</a></li>
-    <li><a href="#">£100</a></li>
-    <li><a href="#">£250</a></li>
-      <li><a href="#">£500</a></li>
-      <li><a href="#">£750</a></li>
-      <li><a href="#">£1000</a></li>
-      <li><a href="#">£1500</a></li>
-      <li><a href="#">£2000</a></li>
-      <li><a href="#">Any</a></li>
-  </ul>
-</div>
+   </select>
+  <br><br>
+  <input type="submit">
+</form>
                 </div>
         
     </div>
