@@ -99,8 +99,10 @@ def result(datein, dateout)
 
   originname = finalquote[1]
   destinationname = finalquote[2]
-
-  answer = [choice[1], finalquote[0]['MinPrice'].to_s + '0', datein, dateout, originname ,  destinationname ]
+    @fuck =  finalquote[0]['MinPrice']
+    finalquote[0]['MinPrice'] *=  @people.to_i
+    
+  answer = [choice[1], finalquote[0]['MinPrice'].to_s + '0', datein, dateout, originname ,  destinationname]
   puts answer
   return answer
 
