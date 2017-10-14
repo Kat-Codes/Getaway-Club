@@ -14,3 +14,4 @@ gem 'rake'
 gem 'skyscanner'
 gem "httparty"
 gem 'geocoder'
+gem 'google_places'
