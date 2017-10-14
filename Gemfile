@@ -11,5 +11,5 @@ gem 'sinatra-contrib'
 gem 'thin'
 gem 'capybara'
 gem 'rake'
-gem "skyscanner"
+gem 'skyscanner'
 gem "httparty"
