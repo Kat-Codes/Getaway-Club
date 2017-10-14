@@ -14,3 +14,5 @@ gem 'skyscanner'
 gem "httparty"
 gem 'geocoder'
 gem 'google_places'
+# Added at 2017-10-14 19:27:20 +0100 by katiewalker:
+gem "passenger", "~> 5.1"
