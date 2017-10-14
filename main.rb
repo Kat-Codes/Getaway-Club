@@ -17,6 +17,8 @@ post '/getholiday' do
   @dateout = swapdate(params[:enddate])
   @minval = params[:MinValue]
   @maxval = params[:MaxValue]
+  @people = params[:PersonCount]
+  @continentPreferenct=params[:ContinentChoice]
   puts(@datein + @dateout)
     
   @final = result(@datein, @dateout)

@@ -32,9 +32,18 @@
 
 
         <div class="row" style="text-align: center;margin-top: 15px">
-            <div class="col-sm-3">
-                Min Value:
-  <select name="MinValue">
+            <div class="col-sm-1"> </div>
+            <div class="col-sm-2">
+                <p>Outbound Date: <br /><input type="text" id="datepicker" name="startdate"></p>
+                
+            </div>
+        <div class="col-sm-2">
+            
+            <p>Return Date: <br /><input type="text" id="datepicker2" name="enddate"></p>
+        </div>
+        <div class="col-sm-1">
+            Min Value:
+            <select name="MinValue">
     <option value="0">£0</option>
     <option value="50">£50</option>
     <option value="100">£100</option>
@@ -45,14 +54,8 @@
     <option value="2000">£2000</option>  
   </select>
   <br><br>
-            </div>
-        <div class="col-sm-3">
-           <p>Outbound Date: <input type="text" id="datepicker" name="startdate"></p> 
         </div>
-        <div class="col-sm-3">
-            <p>Return Date: <input type="text" id="datepicker2" name="enddate"></p>
-        </div>
-                <div class="col-sm-3">
+                <div class="col-sm-1">
                     
     Max value:
     <select name="MaxValue">
@@ -66,6 +69,34 @@
    </select>
   <br><br>
                 </div>
+            <div class="col-sm-2">
+            How many people?<br/>
+            <select name="PersonCount">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>  
+  </select>
+  <br><br>
+        </div>
+            <div class="col-sm-2">
+            Continent preferences?
+            <select name="ContinentChoice">
+    <option value="europe">Europe</option>
+    <option value="antartica">Antartica</option>
+    <option value="asia">Asia</option>
+    <option value="africa">Africa</option>
+    <option value="northAmerica">North America</option>
+    <option value="southAmerica">South America</option>
+    <option value="australia">Australia</option>
+    <option value="any">Any</option>  
+  </select>
+  <br><br>
+        </div>
         
     </div>
         
