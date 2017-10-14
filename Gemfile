@@ -7,5 +7,9 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "bundler"
 gem "rack"
 gem "sinatra"
+gem 'sinatra-contrib'
+gem 'thin'
+gem 'capybara'
+gem 'rake'
 gem "skyscanner"
 gem "httparty"
