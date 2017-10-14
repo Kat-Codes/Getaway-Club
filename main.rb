@@ -8,5 +8,5 @@ end
 
 post '/' do
     
-    erb :index
+    erb :holiday
 end
