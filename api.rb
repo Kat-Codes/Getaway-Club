@@ -44,28 +44,19 @@ def pickquote(country, startdate, enddate)
    quotesdata = findquote(country, startdate, enddate)
    quotes = quotesdata['Quotes']
    places = quotesdata['Places']
-   
-   while quotes.nil? do
-     quotesdata = findquote(country, startdate, enddate)
-     quotes = quotesdata['Quotes']
-     places = quotesdata['Places']
+   quote = 0
+
+   if not quotes.nil?
+     quote = quotes.first
    end
 
-   quote = quotes.first
-
-   while quote.nil? do
-      quotesdata = findquote(randomcountry(response)[0], startdate, enddate)
-      quotes = quotesdata['Quotes']
-      places = quotesdata['Places']
-      quote = quotes.first
+   if not quote.nil?
+     outboundleg = quote['OutboundLeg']
+     originid = outboundleg['OriginId']
+     destinationid = outboundleg['DestinationId']
+     finalorigin = 'Blank'
+     finaldestination = 'Blank'
    end
-
-
-   outboundleg = quote['OutboundLeg']
-   originid = outboundleg['OriginId']
-   destinationid = outboundleg['DestinationId']
-   finalorigin = 'Blank'
-   finaldestination = 'Blank'
 
    places.each do |i|
      if i['PlaceId'] == originid
@@ -92,7 +83,7 @@ def result(datein, dateout)
     choice = randomcountry(response)
     puts choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
-    if (not finalquote.nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
+    if (not finalquote.nil?) && (not finalquote[0].nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
       done = true
     end
   end
