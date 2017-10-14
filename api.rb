@@ -38,10 +38,18 @@ end
 
 def pickquote(country, startdate, enddate)
    quotesdata = findquote(country, startdate, enddate)
-   
    quotes = quotesdata['Quotes']
    places = quotesdata['Places']
    quote = quotes.first
+
+   while quote.nil? do
+      quotesdata = findquote(country, startdate, enddate)
+      quotes = quotesdata['Quotes']
+      places = quotesdata['Places']
+      quote = quotes.first
+   end
+
+
    outboundleg = quote['OutboundLeg']
    originid = outboundleg['OriginId']
    destinationid = outboundleg['DestinationId']
