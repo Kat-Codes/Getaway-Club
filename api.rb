@@ -57,7 +57,7 @@ def result(datein, dateout)
     choice = randomcountry(response)
     puts choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
-    if not finalquote.nil?
+    if (not finalquote.nil?) && (finalquote['MinPrice'].to_i > @minval.to_i)
       done = true
     end
   end

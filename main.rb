@@ -15,6 +15,8 @@ end
 post '/getholiday' do 
   @datein = swapdate(params[:startdate])
   @dateout = swapdate(params[:enddate])
+  @minval = params[:MinValue]
+  @maxval = params[:MaxValue]
   puts(@datein + @dateout)
     
   @final = result(@datein, @dateout)
