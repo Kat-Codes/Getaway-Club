@@ -7,12 +7,17 @@ get '/' do
   erb :index
 end
 
+get 'getholiday' do 
+    erb :holiday
+end
 
 post '/getholiday' do 
   datein = swapdate(params[:startdate])
   dateout = swapdate(params[:enddate])
   puts(datein + dateout)
   findquote(datein, dateout)
+    
+    erb :holiday
 end
 
 def swapdate(dateIn)

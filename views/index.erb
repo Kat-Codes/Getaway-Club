@@ -1,3 +1,5 @@
+<%=  erb :defaultheader %>
+
 <!DOCTYPE html>
     <html lang="en">
     
@@ -11,9 +13,8 @@
 </head>
     
 <body>  
-    <img src="header.jpg" alt="header" width="100%">
     <div class="container-fluid" style="text-align: center;margin: 0;">
-    <form action='/getholiday' methosd="POST" name="getholiday" id="getholiday" >
+    <form action='/getholiday' method="POST" name="getholiday" id="getholiday" >
 
           <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -44,6 +45,10 @@
         
     </div>
         
+        <div id="slidecontainer" style="text-align: center; margin-left: 25%;width: 50%;padding-top: 50px">
+  <input type="range" min="100" max="10000" value="5000" class="slider" id="myRange">
+</div>
+        
 
                     <button type="submit" class="btn btn-success btn-lg;" form:"getholiday" value:"Submit" style="font-size: 50px;margin-top: 100px">Book Me A Holiday!</button>
          </form>
@@ -52,5 +57,6 @@
     
     
 </body>
-<div style="bottom: 0;width: 100%;position: absolute; background-color:#7fd17f; " ><div style="margin: 20px">Made by H. Sams, K.Walker, A Champman, D. Marshall</div></div>
+<%=  erb :defaultfooter %>
+        
 </html>
