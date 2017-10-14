@@ -17,7 +17,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 50%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -120,6 +120,9 @@
         </div>
     </div>
     
+    <div class="row" style="text-align: center;margin-top: 15px">
+            <div class="col-sm-5">
+    
     <input id="pac-input" class="controls" type="text" value=<%= @final[5] %>>
     <div id="map"></div>
     <script>
@@ -132,8 +135,6 @@
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
      
-
-
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -221,10 +222,15 @@
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUjcDRp5jTdrrMXhAokvvKAI7dsrsOotk&libraries=places&callback=initAutocomplete"
-         async defer></script>
+            async defer></script>
+    </div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
     
 
-    <a href="https://www.skyscanner.net/"><img src="button2.png" style="width:25%; height:auto;margin-left:37.5%" title="SkyScanner" alt="SkyScannerLink"></a>
+    <a href="https://www.skyscanner.net/"><img src="button2.png" style="height:auto;width:100%" title="SkyScanner" alt="SkyScannerLink"></a>
+        </div>
+    </div>
 
    
     
