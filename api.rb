@@ -6,13 +6,24 @@ response = HTTParty.get(url, format: :json)
 response.parsed_response
 
 def randomcountry data
-   countries = data['Continents'].first['Countries']
-   #countries.each do |i|
-   #   puts i.first['Name']
-   #end
-   countries.each do |i|
-      puts i['Name']
+   countrylist = []
+
+   continents = data['Continents']
+   continents.each do |j|
+      countries = j['Countries']
+     countries.each do |i|
+        countrylist.push(i['Name'])
+     end
    end
+
+   number = countrylist.length
+   puts countrylist[rand(number)]
+
+
+   #countries = data['Continents'].first['Countries']
+   #countries.each do |i|
+   #   puts i['Name']
+   #end
 end
 
 randomcountry response
