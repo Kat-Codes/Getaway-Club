@@ -2,6 +2,13 @@ require 'sinatra'
 require 'erb'
 
 get '/' do
-    puts "poop"
+    @submitted = False
+    
   erb :index
+end
+
+post '/' do
+    @submitted = True;
+    
+    erb :index
 end

@@ -1,36 +1,73 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    backports (3.10.0)
+    capybara (2.15.4)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    daemons (1.2.4)
+    eventmachine (1.2.5)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
+    mini_mime (0.1.4)
+    mini_portile2 (2.3.0)
     multi_json (1.12.2)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mustermann (1.0.1)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
+    public_suffix (3.0.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    rack-test (0.7.0)
+      rack (>= 1.0, < 3)
+    rake (12.1.0)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
+    sinatra-contrib (2.0.0)
+      backports (>= 2.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.0)
+      sinatra (= 2.0.0)
+      tilt (>= 1.3, < 3)
     skyscanner (0.2.0)
       faraday
       multi_json
+    thin (1.7.2)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
     tilt (2.0.8)
+    xpath (2.1.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bundler
+  capybara
   httparty
   rack
+  rake
   sinatra
+  sinatra-contrib
   skyscanner
+  thin
 
 BUNDLED WITH
    1.15.4
