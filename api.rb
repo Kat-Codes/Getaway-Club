@@ -37,13 +37,24 @@ def gethotel(country, checkindate, checkoutdate, minprice, maxprice)
 end
 
 def pickquote(country, startdate, enddate)
+   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
+   response = HTTParty.get(url, format: :json)
+   response = response.parsed_response
+ 
    quotesdata = findquote(country, startdate, enddate)
    quotes = quotesdata['Quotes']
    places = quotesdata['Places']
+   
+   while quotes.nil? do
+     quotesdata = findquote(country, startdate, enddate)
+     quotes = quotesdata['Quotes']
+     places = quotesdata['Places']
+   end
+
    quote = quotes.first
 
    while quote.nil? do
-      quotesdata = findquote(country, startdate, enddate)
+      quotesdata = findquote(randomcountry(response)[0], startdate, enddate)
       quotes = quotesdata['Quotes']
       places = quotesdata['Places']
       quote = quotes.first
@@ -74,7 +85,6 @@ def result(datein, dateout)
   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
   response = HTTParty.get(url, format: :json)
   response = response.parsed_response
-
   done = false
 
   while done == false do
