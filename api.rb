@@ -9,17 +9,20 @@ response.parsed_response
 
 def randomcountry data
    countrylist = []
+   names = []
 
    continents = data['Continents']
    continents.each do |j|
       countries = j['Countries']
      countries.each do |i|
         countrylist.push(i['Id'])
+        names.push(i['Name'])
      end
    end
 
    number = countrylist.length
-   return countrylist[rand(number)]
+   selection = rand(number)
+   return [countrylist[selection], names[selection]]
 
 
    #countries = data['Continents'].first['Countries']
@@ -43,12 +46,15 @@ def pickquote(country, startdate, enddate)
    
    quotes = quotesdata['Quotes']
    quote = quotes.first
-   puts quote
+   return quote
 end
 
 choice = randomcountry(response)
-puts choice
-pickquote(choice, "2017-11-01", "2017-11-04")
+puts choice[1]
+finalquote = pickquote(choice[0], "2017-11-01", "2017-11-04")
+
+puts "Your destination is " + choice[1] + "\n"
+puts "Your flight will cost £" + finalquote['MinPrice'].to_s + '0' + "\n"
 
 
 
