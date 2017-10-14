@@ -1,0 +1,89 @@
+<%=  erb :defaultheader %>
+
+<!DOCTYPE html>
+    <html lang="en">
+    
+<head>
+  <title>Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    
+<body>  
+    <div class="container-fluid" style="text-align: center;margin: 0;">
+    <form action='/getholiday' method="POST" name="getholiday" id="getholiday" >
+
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <script>
+            $( function() {
+            $( "#datepicker" ).datepicker();
+            } );
+        </script>
+        <script>
+            $( function() {
+            $( "#datepicker2" ).datepicker();
+            } );
+        </script>
+
+
+        <div class="row" style="text-align: center;margin-top: 15px">
+            <div class="col-sm-3">
+                Min Value:
+  <select name="MinValue">
+    <option value="0">£0</option>
+    <option value="50">£50</option>
+    <option value="100">£100</option>
+    <option value="250">£250</option>
+      <option value="750">£750</option>
+      <option value="1000">£1000</option>
+      <option value="1500">£1500</option>
+      <option value="2000">£2000</option>
+      
+  </select>
+  <br><br>
+            </div>
+        <div class="col-sm-3">
+           <p>Outbound Date: <input type="text" id="datepicker" name="startdate"></p> 
+        </div>
+        <div class="col-sm-3">
+            <p>Return Date: <input type="text" id="datepicker2" name="enddate"></p>
+        </div>
+                <div class="col-sm-3">
+                    <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  style="background-color: #b35900">Max Cost
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+
+                    Max value:
+                    <form action="/action_page.php">
+                    <select name="MaxValue">
+    <option value="50">£50</option>
+    <option value="100">£100</option>
+    <option value="250">£250</option>
+      <option value="750">£750</option>
+      <option value="1000">£1000</option>
+      <option value="1500">£1500</option>
+      <option value="2000">£2000</option>
+        <option value="any">Any</option>
+
+      
+   </select>
+  <br><br>
+                </div>
+        
+    </div>
+        
+        
+        
+
+                    <button type="submit" class="btn btn-secondary btn-lg;" form:"getholiday" value:"Submit" style="font-size: 50px;margin-bottom: 0px; border: 0;margin-top: 175px; width: 50%"><img src="button.png" style="width: 100%;"</button>
+         </form>
+    </div> 
+        </body>
+     <footer style="background-color:#b35900;" class="page-footer" ><div style="padding-top:10px; padding-bottom:10px;color:white">Made by H. Sams, K.Walker, A Chapman, D. Marshall</div></footer>
+</html>
