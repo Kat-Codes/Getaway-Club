@@ -112,6 +112,8 @@ def getfacts(country)
      currency = restresponse['currencies'].first['name']
      timezone = restresponse['timezones'].first
      capital = restresponse['capital']
+     latlng = restresponse['latlng']
+     puts latlng
    else
      flag = 0
      language = 0
@@ -119,7 +121,7 @@ def getfacts(country)
      timezone = 0
    end
 
-   return [flag, language, currency, timezone, capital]
+   return [flag, language, currency, timezone, capital, latlng]
 end
 
 
