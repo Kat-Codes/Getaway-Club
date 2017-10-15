@@ -1,0 +1,17 @@
+.borderarea{
+  width: 80%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #f4c242;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.centrebox{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.FormTitle{
+  font-weight: bold;
+}

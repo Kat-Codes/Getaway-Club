@@ -8,8 +8,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
+	<link rel="stylesheet" href="style/main.css"/>		
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -30,17 +31,17 @@
       } );
     </script>
 
-    <div class="row " style="text-align: center;margin-top: 15px">
-        <div class="col-sm-6">
-          <p>Outbound Date: <br />
+    <div class="row borderarea" style="text-align: center;margin-top: 15px">
+        <div class="col-md-6">
+          <p class = "FormTitle">Outbound Date: <br />
           <input type="text" id="datepicker" name="startdate"></p>               
         </div>
         <div class="col-md-6">    
-          <p>Return Date: <br />
+          <p class = "FormTitle">Return Date: <br />
           <input type="text" id="datepicker2" name="enddate"></p>
         </div>
     </div>
-    <div class="row" style="text-align: center;margin-top: 15px">
+    <div class="row borderarea" style="text-align: center;margin-top: 15px">
         <div class="col-sm-6">
           <p class="FormTitle">Min Value(pp):</p>
           <select name="MinValue">
@@ -56,7 +57,7 @@
           <br><br>
         </div>
         <div class="col-sm-6">
-          <p>Max value(pp):</p>
+          <p class="FormTitle">Max value(pp):</p>
           <select name="MaxValue">
             <option value="50">£50</option>
             <option value="100">£100</option>
@@ -69,9 +70,9 @@
           <br><br>
           </div>
       </div>
-      <div class="row" style="text-align: center;margin-top: 15px">
+      <div class="row borderarea" style="text-align: center;margin-top: 15px">
         <div class="col-sm-6">
-            <p>How many people?</p>
+            <p class="FormTitle">Number Of People:</p>
             <br/>
             <select name="PersonCount">
               <option value="1">1</option>
@@ -86,7 +87,7 @@
             <br><br>
           </div>
         <div class="col-sm-6">
-            <p>Continent preferences?</p><br />
+            <p class="FormTitle">Continent Preference:</p><br />
             <select name="ContinentChoice">
               <option value="any">Any</option>
               <option value="arctic">Antartica</option>
