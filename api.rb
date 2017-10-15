@@ -101,14 +101,22 @@ def getinfo(country)
 end
 
 def getfacts(country)
-   resturl = "https://restcountries.eu/rest/v2/name/#{country}"
+   fixedcountry = country.gsub(' ', '%20')
+   resturl = "https://restcountries.eu/rest/v2/name/#{fixedcountry}"
    restresponse = HTTParty.get(resturl, format: :json)
    restresponse = restresponse.parsed_response.first
 
-   flag = restresponse['flag']
-   language = restresponse['languages'].first['name']
-   currency = restresponse['currencies'].first['name']
-   timezone = restresponse['timezones'].first
+   if not restresponse.nil?
+     flag = restresponse['flag']
+     language = restresponse['languages'].first['name']
+     currency = restresponse['currencies'].first['name']
+     timezone = restresponse['timezones'].first
+   else
+     flag = 0
+     language = 0
+     currency = 0
+     timezone = 0
+   end
 
    return [flag, language, currency, timezone]
 end
