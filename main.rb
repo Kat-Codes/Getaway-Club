@@ -3,6 +3,8 @@ require 'erb'
 require_relative 'skytest'
 require_relative 'api'
 
+disable :show_exceptions
+
 get '/' do
     
   erb :index
@@ -24,6 +26,10 @@ post '/getholiday' do
   @final = result(@continentPreference, @datein, @dateout)
   puts @final
   erb :holiday
+end
+
+error do
+  erb :index
 end
 
 def swapdate(dateIn)
