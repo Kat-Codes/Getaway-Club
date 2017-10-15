@@ -10,104 +10,96 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+  <link rel="stylesheet" href="mine.css">
 </head>
     
 <body>  
     <div class="container-fluid" style="text-align: center;margin: 0;">
     <form action='/getholiday' method="POST" name="getholiday" id="getholiday" >
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>      
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+    </script>
+    <script>
+      $( function() {
+        $( "#datepicker2" ).datepicker();
+      } );
+    </script>
 
-          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        
-        <script>
-            $( function() {
-            $( "#datepicker" ).datepicker();
-            } );
-        </script>
-        <script>
-            $( function() {
-            $( "#datepicker2" ).datepicker();
-            } );
-        </script>
-
-
-        <div class="row" style="text-align: center;margin-top: 15px">
-            <div class="col-sm-1"> </div>
-            <div class="col-sm-2">
-                <p>Outbound Date: <br /><input type="text" id="datepicker" name="startdate"></p>
-                
-            </div>
+    <div class="row" style="text-align: center;margin-top: 15px">
+      <div class="col-sm-1"> </div>
         <div class="col-sm-2">
-            
-            <p>Return Date: <br /><input type="text" id="datepicker2" name="enddate"></p>
+          <p>Outbound Date: <br />
+          <input type="text" id="datepicker" name="startdate"></p>               
+        </div>
+        <div class="col-sm-2">    
+          <p>Return Date: <br />
+          <input type="text" id="datepicker2" name="enddate"></p>
         </div>
         <div class="col-sm-1">
-            Min Value(pp):
-            <select name="MinValue">
-    <option value="0">£0</option>
-    <option value="50">£50</option>
-    <option value="100">£100</option>
-    <option value="250">£250</option>
-    <option value="750">£750</option>
-    <option value="1000">£1000</option>
-    <option value="1500">£1500</option>
-    <option value="2000">£2000</option>  
-  </select>
-  <br><br>
+          <h2>Min Value(pp):</p>
+          <select name="MinValue">
+            <option value="0">£0</option>
+            <option value="50">£50</option>
+            <option value="100">£100</option>
+            <option value="250">£250</option>
+            <option value="750">£750</option>
+            <option value="1000">£1000</option>
+            <option value="1500">£1500</option>
+            <option value="2000">£2000</option>  
+          </select>
+          <br><br>
         </div>
-                <div class="col-sm-1">
-                    
-    Max value(pp):
-    <select name="MaxValue">
-      <option value="50">£50</option>
-      <option value="100">£100</option>
-      <option value="250">£250</option>
-      <option value="750">£750</option>
-      <option value="1000">£1000</option>
-      <option value="1500">£1500</option>
-      <option value="2000">£2000</option>  
-   </select>
-  <br><br>
-                </div>
-            <div class="col-sm-2">
-            How many people?<br/>
+        <div class="col-sm-1">            
+          <p>Max value(pp):</p>
+          <select name="MaxValue">
+            <option value="50">£50</option>
+            <option value="100">£100</option>
+            <option value="250">£250</option>
+            <option value="750">£750</option>
+            <option value="1000">£1000</option>
+            <option value="1500">£1500</option>
+            <option value="2000">£2000</option>  
+          </select>
+          <br><br>
+          </div>
+          <div class="col-sm-2">
+            <p>How many people?</p>
+            <br/>
             <select name="PersonCount">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>  
-  </select>
-  <br><br>
-        </div>
-            <div class="col-sm-2">
-            Continent preferences?<br />
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>  
+            </select>
+            <br><br>
+          </div>
+          <div class="col-sm-2">
+            <p>Continent preferences?</p><br />
             <select name="ContinentChoice">
-    <option value="any">Any</option>
-    <option value="arctic">Antartica</option>
-    <option value="asia">Asia</option>
-    <option value="africa">Africa</option>
-    <option value="north america">North America</option>
-    <option value="south america">South America</option>
-    <option value="oceania">Australia</option>
-    <option value="europe">Europe</option>  
-  </select>
-  <br><br>
-        </div>
-        
+              <option value="any">Any</option>
+              <option value="arctic">Antartica</option>
+              <option value="asia">Asia</option>
+              <option value="africa">Africa</option>
+              <option value="north america">North America</option>
+              <option value="south america">South America</option>
+              <option value="oceania">Australia</option>
+              <option value="europe">Europe</option>  
+            </select>
+            <br><br>
+          </div>    
     </div>
         
-        
-        
-
-        <button type="submit" class="btn btn-secondary btn-lg;" form:"getholiday" value:"Submit" style="font-size: 50px;margin-bottom: 0px; border: 0;margin-top: 175px; width: 50%"><img src="button.png" style="width: 100%;">
-        </button>
-        </form>
-        </div>
+        <button type="submit" class="btn btn-secondary btn-lg;" form:"getholiday" value:"Submit" style="font-size: 50px;margin-bottom: 0px; border: 0;margin-top: 175px; width: 50%"><img src="button.png" style="width: 100%;"></button>
+      </form>
+    </div>
         </body>
      <footer style="background-color:#b35900;" class="page-footer" ><div style="padding-top:10px; padding-bottom:10px;color:white">Made by H. Sams, K.Walker, A Chapman, D. Marshall</div></footer>
 </html>
