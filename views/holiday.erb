@@ -119,7 +119,7 @@
             <p >you will be flying to: <br /><strong style="font-size:30px"><%= @final[5] %></strong></p>
         </div>
     </div>
-    <div><h1>About <strong><%= @final[0] %></strong>:</h1><br /><%= @wiki%></div>
+    
     <div class="row" style="text-align: center;margin-top: 15px">
             <div class="col-sm-5">
     
@@ -225,11 +225,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9VJF3Y5i3wB502XQ7pYYbwK6OTOcN3wI&libraries=places&callback=initAutocomplete"
             async defer></script>
     </div>
-        <div class="col-sm-2"> </div>
+        <div class="col-sm-2"> <a href=<%=  @link %>><img src="button2.png" style="height:auto;width:100%" title="SkyScanner" alt="SkyScannerLink"></a></div>
         <div class="col-sm-5">
-    
-
-    <a href=<%=  @link %>><img src="button2.png" style="height:auto;width:100%" title="SkyScanner" alt="SkyScannerLink"></a>
+            <div><h1>About <strong><%= @final[0] %></strong>:</h1><br /><%= @wiki%></div>
         </div>
     </div>
 
