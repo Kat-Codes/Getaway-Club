@@ -52,6 +52,8 @@ def pickquote(country, startdate, enddate)
    quote = 0
    origincode = 0
    destinationcode = 0
+   outboundleg = 0
+
 
    if not quotes.nil?
      quote = quotes.first
@@ -80,6 +82,19 @@ def pickquote(country, startdate, enddate)
 
    return [quote, finalorigin, finaldestination, origincode, destinationcode]
 end
+
+def getinfo(country)
+   wikiurl = "http://en.wikivoyage.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1&titles=#{country}&exintro=1"
+   wikiresponse = HTTParty.get(wikiurl, format: :json)
+   wikiresponse = wikiresponse.parsed_response
+
+   wikipage = wikiresponse["query"]["pages"].first
+   
+   wikiextract = wikipage[1]["extract"]
+
+   return wikiextract
+end
+
 def result(continent, datein, dateout)
 
   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
@@ -91,6 +106,7 @@ def result(continent, datein, dateout)
 
     choice = randomcountry(continent, response)
     puts choice[1]
+    @wiki = getinfo choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
     if (not finalquote.nil?) && (not finalquote[0].nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
       done = true
