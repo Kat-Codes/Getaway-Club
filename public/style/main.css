@@ -1,14 +1,15 @@
 .borderarea{
+  background-color: white;  
   width: 80%;
   border-style: solid;
   border-width: 8px;
-  border-color: #f4c242;
+  border-color: white;
   border-radius: 20px;
   margin: auto;
 }
 
 .centrebox{
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
 }
 
