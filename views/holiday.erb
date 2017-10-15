@@ -120,11 +120,9 @@
             <p >You will be flying to: <br /><strong style="font-size:30px"><%= @final[5] %></strong></p>
         </div>
     </div>
-    
-    <div class="row" style="text-align: center;margin-top: 15px">
-            <div class="col-sm-6">
-                
-    
+       <div style="padding-left:42%">
+    <a onclick='location.reload();'><img src="refresh.png" style="height:auto;width:25%;" title="SkyScanner" alt="SkyScannerLink"></a> 
+           </div> 
     <!-- <input id="pac-input" class="controls" type="text" value=<%= @final[5] %>> -->
     <div id="map"></div>
     <script>
@@ -226,18 +224,9 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9VJF3Y5i3wB502XQ7pYYbwK6OTOcN3wI&libraries=places&callback=initAutocomplete"
             async defer></script>
-    </div>
-<<<<<<< HEAD
-        
-        <div class="col-sm-6">
-            <div>
-=======
-        <div class="col-sm-2"><a onclick='location.reload();'><img src="refresh.png" style="height:auto;width:100%" title="SkyScanner" alt="SkyScannerLink"></a> 
-            <a href=<%=  @link %>><img src="button2.png" style="height:auto;width:100%" title="SkyScanner" alt="SkyScannerLink"></a>
-            
-        <div>
->>>>>>> origin/master
-                <h3>Useful information:</h3>
+    <div class="row" style="text-align: center;margin-top: 15px">
+            <div class="col-sm-6">
+            <h3>Useful information:</h3>
             <ul align="left">
                 <li>Capital: <%=  @facts[4] %></li>
               <li>Language spoken: <%=  @facts[1] %> </li>
@@ -245,14 +234,16 @@
               <li>Timezone: <%=  @facts[3] %></li>
             </ul> 
             </div>
+        <div class="col-sm-6">
             <div><h1>About <strong><%= @final[0] %></strong>:</h1><br /><%= @wiki%></div>
-            
-        </div>
     </div>
-    <div ><a onclick='location.reload();'><img src="refresh.png" style="height:auto;width:10%" title="SkyScanner" alt="SkyScannerLink"></a> <a href=<%=  @link %>><img src="button2.png" style="height:auto;width:10%" title="SkyScanner" alt="SkyScannerLink"></a>
+        
+        
             
-        </div>
 
+    </div>
+
+            <a href=<%=  @link %>><img src="button2.png" style="height:auto;width:25%;" title="SkyScanner" alt="SkyScannerLink"></a>
    
     
 </body>
