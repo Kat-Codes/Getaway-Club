@@ -123,7 +123,7 @@
     <div class="row" style="text-align: center;margin-top: 15px">
             <div class="col-sm-5">
     
-    <input id="pac-input" class="controls" type="text" value=<%= @final[5] %>>
+    <!-- <input id="pac-input" class="controls" type="text" value=<%= @final[5] %>> -->
     <div id="map"></div>
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
@@ -144,7 +144,7 @@
         });
 
         // Create the search box and link it to the UI element.
-        var input          =  document.getElementById('pac-input'),
+        /* var input          =  document.getElementById('pac-input'),
            ac              = new google.maps.places.SearchBox(input),
            itemsloaded    =  google.maps.event
                           .addDomListener(document.body,
@@ -161,7 +161,7 @@
                             }
                           });
         var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input); */
 
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
