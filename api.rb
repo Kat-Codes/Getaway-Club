@@ -1,5 +1,5 @@
 require_relative 'skytest'
-
+require'certified'
 require 'httparty'
 
 def randomcountry(continent, data)
