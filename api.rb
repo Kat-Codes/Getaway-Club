@@ -59,24 +59,29 @@ def pickquote(country, startdate, enddate)
      quote = quotes.first
    end
 
-   if not quote.nil?
+   if quote.is_a?(Hash) and not quote.nil?
      outboundleg = quote['OutboundLeg']
+   end
+
+   if outboundleg.is_a?(Hash) and not outboundleg.nil?
      originid = outboundleg['OriginId']
      destinationid = outboundleg['DestinationId']
      finalorigin = 'Blank'
      finaldestination = 'Blank'
    end
 
-   places.each do |i|
-     if i['PlaceId'] == originid
-        puts i['Name'] + i['PlaceId'].to_s
-        finalorigin = i['Name']
-        origincode = i['SkyscannerCode']
-     end
-     if i['PlaceId'] == destinationid
-        puts i['Name'] + i['PlaceId'].to_s
-        finaldestination = i['Name']
-        destinationcode = i['SkyscannerCode']
+   if not places.nil?
+     places.each do |i|
+       if i['PlaceId'] == originid
+          puts i['Name'] + i['PlaceId'].to_s
+          finalorigin = i['Name']
+          origincode = i['SkyscannerCode']
+       end
+       if i['PlaceId'] == destinationid
+          puts i['Name'] + i['PlaceId'].to_s
+          finaldestination = i['Name']
+          destinationcode = i['SkyscannerCode']
+       end
      end
    end
 
