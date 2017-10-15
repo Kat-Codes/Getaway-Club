@@ -100,6 +100,20 @@ def getinfo(country)
    return wikiextract
 end
 
+def getfacts(country)
+   resturl = "https://restcountries.eu/rest/v2/name/#{country}"
+   restresponse = HTTParty.get(resturl, format: :json)
+   restresponse = restresponse.parsed_response.first
+
+   flag = restresponse['flag']
+   language = restresponse['languages'].first['name']
+   currency = restresponse['currencies'].first['name']
+   timezone = restresponse['timezones'].first
+
+   return [flag, language, currency, timezone]
+end
+
+
 def result(continent, datein, dateout)
 
   url = "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apiKey=ha906464854775459164611892547937"
@@ -112,6 +126,7 @@ def result(continent, datein, dateout)
     choice = randomcountry(continent, response)
     puts choice[1]
     @wiki = getinfo choice[1]
+    @facts = getfacts choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
     if (not finalquote.nil?) && (not finalquote[0].nil?) && (not finalquote[1].nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
       done = true
