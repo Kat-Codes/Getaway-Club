@@ -113,7 +113,7 @@ def result(continent, datein, dateout)
     puts choice[1]
     @wiki = getinfo choice[1]
     finalquote = pickquote(choice[0], datein, dateout)
-    if (not finalquote.nil?) && (not finalquote[0].nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
+    if (not finalquote.nil?) && (not finalquote[0].nil?) && (not finalquote[1].nil?) && (finalquote[0]['MinPrice'].to_i > @minval.to_i) && (finalquote[0]['MinPrice'].to_i < @maxval.to_i)
       done = true
     end
   end
