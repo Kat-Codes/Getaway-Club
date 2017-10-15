@@ -8,9 +8,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="mine.css">
 </head>
     
 <body>  
@@ -29,18 +30,19 @@
       } );
     </script>
 
-    <div class="row" style="text-align: center;margin-top: 15px">
-      <div class="col-sm-1"> </div>
-        <div class="col-sm-2">
+    <div class="row " style="text-align: center;margin-top: 15px">
+        <div class="col-sm-6">
           <p>Outbound Date: <br />
           <input type="text" id="datepicker" name="startdate"></p>               
         </div>
-        <div class="col-sm-2">    
+        <div class="col-md-6">    
           <p>Return Date: <br />
           <input type="text" id="datepicker2" name="enddate"></p>
         </div>
-        <div class="col-sm-1">
-          <h2>Min Value(pp):</p>
+    </div>
+    <div class="row" style="text-align: center;margin-top: 15px">
+        <div class="col-sm-6">
+          <p class="FormTitle">Min Value(pp):</p>
           <select name="MinValue">
             <option value="0">£0</option>
             <option value="50">£50</option>
@@ -53,7 +55,7 @@
           </select>
           <br><br>
         </div>
-        <div class="col-sm-1">            
+        <div class="col-sm-6">
           <p>Max value(pp):</p>
           <select name="MaxValue">
             <option value="50">£50</option>
@@ -66,7 +68,9 @@
           </select>
           <br><br>
           </div>
-          <div class="col-sm-2">
+      </div>
+      <div class="row" style="text-align: center;margin-top: 15px">
+        <div class="col-sm-6">
             <p>How many people?</p>
             <br/>
             <select name="PersonCount">
@@ -81,7 +85,7 @@
             </select>
             <br><br>
           </div>
-          <div class="col-sm-2">
+        <div class="col-sm-6">
             <p>Continent preferences?</p><br />
             <select name="ContinentChoice">
               <option value="any">Any</option>
@@ -95,11 +99,14 @@
             </select>
             <br><br>
           </div>    
-    </div>
-        
+      </div>
+      <div class="row" style="text-align: center;margin-top: 15px">
+
         <button type="submit" class="btn btn-secondary btn-lg;" form:"getholiday" value:"Submit" style="font-size: 50px;margin-bottom: 0px; border: 0;margin-top: 175px; width: 50%"><img src="button.png" style="width: 100%;"></button>
       </form>
     </div>
+       </div>
+
         </body>
      <footer style="background-color:#b35900;" class="page-footer" ><div style="padding-top:10px; padding-bottom:10px;color:white">Made by H. Sams, K.Walker, A Chapman, D. Marshall</div></footer>
 </html>
